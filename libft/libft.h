@@ -6,7 +6,7 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:08:11 by zy0tsh1           #+#    #+#             */
-/*   Updated: 2021/11/24 13:24:55 by enja             ###   ########.fr       */
+/*   Updated: 2021/11/24 15:03:11 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
-// char			**ft_split(char const *s, char c);
+char			**ft_split(char const *s, char c);
 #endif

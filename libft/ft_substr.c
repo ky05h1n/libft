@@ -6,26 +6,13 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:25:08 by enja              #+#    #+#             */
-/*   Updated: 2021/11/24 17:13:09 by enja             ###   ########.fr       */
+/*   Updated: 2021/11/28 22:34:50 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	zy_strcpy(char *dest, const char *src, size_t size)
-{
-	size_t	a;
-
-	a = 0;
-	while (src[a] && a < size - 1)
-	{
-		dest[a] = src[a];
-		a++;
-	}
-	dest[a] = '\0';
-}
-
-size_t	zy_strnlen(const char *str, size_t len)
+static size_t	zy_strnlen(const char *str, size_t len)
 {
 	size_t	count;
 

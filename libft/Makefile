@@ -1,6 +1,16 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: enja <enja@student.42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/29 17:36:26 by enja              #+#    #+#              #
+#    Updated: 2021/11/30 22:37:45 by enja             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS    = ft_atoi.c \
+SRC    = ft_atoi.c \
 		  ft_memcmp.c \
 		  ft_isalnum.c \
 		  ft_isdigit.c \
@@ -27,38 +37,32 @@ SRCS    = ft_atoi.c \
 		  ft_strdup.c \
 		  ft_strjoin.c \
 		  ft_split.c \
+		  ft_strtrim.c \
+		  ft_strmapi.c \
+		  ft_striteri.c \
+		  ft_itoa.c \
+		  ft_putchar_fd.c \
+		  ft_putstr_fd.c \
+		  ft_putendl_fd.c \
+		  ft_putnbr_fd.c \
 
-OBJS    = $(SRCS:.c=.o)
+CC = cc
 
-ICLS    = libft.h
+CFLAGS = -Wall -Wextra -Werror
 
-GCC        = gcc
+NAME = libft.a
 
-FLGS    = -Wall -Wextra -Werror
+OBJ = $(SRC:.c=.o)
 
-LIB1    = ar -rcs
+all: $(NAME)
 
-LIB2    = ranlib
+$(NAME): $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
-RM        = rm -f
+clean: 
+	rm -f $(OBJ)
 
-all:        $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-$(NAME):	$(OBJS)
-			$(LIB1) $(NAME) $(OBJS)
-			$(LIB2) $(NAME)
-
-bonus:      $(NAME) $(BONUS_O)
-			$(LIB1) $(NAME) $(BONUS_O)
-			$(LIB2) $(NAME)
-
-.c.o:
-			$(GCC) $(FLGS) -I $(ICLS) -c $<
-
-clean:
-			$(RM) $(OBJS) $(BONUS_O)
-
-fclean:        clean
-			$(RM) $(NAME)
-
-re:            fclean all
+re: fclean all

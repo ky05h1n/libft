@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 16:08:50 by enja              #+#    #+#             */
-/*   Updated: 2021/11/30 19:09:54 by enja             ###   ########.fr       */
+/*   Created: 2021/11/28 19:09:00 by enja              #+#    #+#             */
+/*   Updated: 2021/11/28 22:17:48 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		a;
+	unsigned int	a;
+	char			*str;
 
-	if (dest == src || !n)
-		return (dest);
+	if (!s)
+		return (NULL);
+	str = ft_strdup(s);
+	if (!str)
+		return (NULL);
 	a = 0;
-	if (dest < src)
+	while (str[a] != '\0')
 	{
-		while (a < n)
-		{
-			*((char *)dest + a) = *((char *)src + a);
-			a++;
-		}
+		str[a] = f(a, str[a]);
+		a++;
 	}
-	else
-	{
-		while (n > 0)
-		{
-			*((char *)dest + n - 1) = *((char *)src + n - 1);
-			n--;
-		}
-	}
-	return (dest);
+	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:53:42 by enja              #+#    #+#             */
-/*   Updated: 2021/11/24 13:26:48 by enja             ###   ########.fr       */
+/*   Updated: 2021/11/28 23:17:03 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	zy_cpy(char *dest, const char *src)
+static void	zy_cpy(char *dest, const char *src)
 {
 	size_t	a;
 
@@ -30,8 +30,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*finaldest;
 	size_t	length;
 
-	if (!s1 || !s2)
+	if ((!s1 && !s2))
 		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
 	length = ft_strlen(s1) + ft_strlen(s2);
 	predest = malloc(length + 1 * sizeof(char));
 	if (!predest)

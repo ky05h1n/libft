@@ -6,7 +6,7 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 21:04:57 by enja              #+#    #+#             */
-/*   Updated: 2021/11/28 19:05:32 by enja             ###   ########.fr       */
+/*   Updated: 2021/12/02 18:25:47 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*zy_extract(char const *s, int start, int len)
 	return (dst);
 }
 
-static int	zy_begtrim(char *str, char *trm)
+static int	zy_begtrim(const char *str, const char *trm)
 {
 	int	aix;
 	int	i;
@@ -60,7 +60,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	hold = 0;
 	if (!s1)
 		return (NULL);
-	hold = zy_begtrim((char *)s1, (char *)set);
+	hold = zy_begtrim(s1, set);
 	bix = ft_strlen(s1) - 1;
 	if (hold == bix + 1)
 		return (ft_strdup(""));

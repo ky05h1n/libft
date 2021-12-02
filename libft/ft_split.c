@@ -6,13 +6,13 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:02:34 by enja              #+#    #+#             */
-/*   Updated: 2021/11/26 18:48:21 by enja             ###   ########.fr       */
+/*   Updated: 2021/12/02 18:07:50 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*zy_extstr(char const *s, int start, int len)
+static char	*zy_extstr(char const *s, int start, int len)
 {
 	char	*dst;
 	int		a;
@@ -29,7 +29,7 @@ char	*zy_extstr(char const *s, int start, int len)
 	return (dst);
 }
 
-int	zymm_len(const char *s, char c, int a)
+static int	zymm_len(const char *s, char c, int a)
 {
 	int	b;
 
@@ -42,7 +42,7 @@ int	zymm_len(const char *s, char c, int a)
 	return (b);
 }
 
-int	sepsign(const char *s, char sep)
+static int	sepsign(const char *s, char sep)
 {
 	int		sepsign;
 	int		a;
@@ -73,7 +73,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	a = 0;
 	aix = 0;
-	finaldest = (char **)malloc((sepsign(s, c) + 1) * sizeof(char **));
+	finaldest = malloc((sepsign(s, c) + 1) * sizeof(char *));
 	if (!finaldest)
 		return (NULL);
 	while (s[a] != '\0')

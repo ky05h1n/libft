@@ -6,14 +6,13 @@
 /*   By: enja <enja@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:08:11 by zy0tsh1           #+#    #+#             */
-/*   Updated: 2021/11/30 21:06:50 by enja             ###   ########.fr       */
+/*   Updated: 2021/12/02 18:06:37 by enja             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
